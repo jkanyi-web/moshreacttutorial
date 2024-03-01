@@ -2,8 +2,16 @@ function Message() {
   let name = ''
 
   if (name) 
-    return <h1>Hello {name}</h1>;
-  return <h1>Hello Stranger</h1>;
+    return (
+      <div className="container">
+        <h1> Hello { name }</h1>
+      </div>
+  ) 
+  return (
+    <div className="container">
+      <h1> Hello stranger</h1>
+    </div>
+  ); 
 }
 
 export default Message
