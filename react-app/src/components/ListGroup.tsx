@@ -1,28 +1,31 @@
 /** @format */
 
-import { useState } from "react";
+import { useState } from 'react';
 
-const ListGroup = () => {
-  const [selectedIndex, setSelectedIndex] = useState(-1)
-  
-  let countries = [
-    'SanFrancisco',
-    'NewYork',
-    'LosAngeles',
-    'Chicago',
-    'Houston',
-  ];
+interface Props {
+  countries: string[];
+  heading: string;
+}
+
+const ListGroup = ({ countries, heading }: Props) => {
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {countries.length === 0 && <p>No countries found</p>}
       <ul className="list-group">
         {countries.map((country, index) => (
           <li
-            className={selectedIndex === index ? 'list-group-item active' : 'list-group-item'}
+            className={
+              selectedIndex === index
+                ? 'list-group-item active'
+                : 'list-group-item'
+            }
             key={index}
-            onClick={() => {setSelectedIndex(index)}}>
+            onClick={() => {
+              setSelectedIndex(index);
+            }}>
             {country}
           </li>
         ))}
