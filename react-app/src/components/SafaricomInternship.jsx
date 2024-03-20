@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import React, { useState } from 'react';
 
-export default () => {
+const saf = () => {
   const [likes, setLikes] = useState(100);
   const [dislikes, setDislikes] = useState(25);
   const [likeActive, setLikeActive] = useState(false);
@@ -50,3 +50,5 @@ export default () => {
     </>
   );
 };
+
+export default saf;

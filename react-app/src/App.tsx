@@ -3,7 +3,6 @@
 import './App.css';
 import ListGroup from './components/ListGroup';
 
-
 function App() {
   let countries = [
     'SanFrancisco',
