@@ -5,9 +5,10 @@ import { useState } from 'react';
 interface Props {
   countries: string[];
   heading: string;
+  onSelectCountry: (country: string) => void;
 }
 
-const ListGroup = ({ countries, heading }: Props) => {
+const ListGroup = ({ countries, heading, onSelectCountry }: Props) => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
@@ -25,6 +26,7 @@ const ListGroup = ({ countries, heading }: Props) => {
             key={index}
             onClick={() => {
               setSelectedIndex(index);
+              onSelectCountry(country);
             }}>
             {country}
           </li>
